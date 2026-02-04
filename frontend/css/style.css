@@ -29,3 +29,6 @@ body{
     border-radius: 4px;
     cursor: pointer;
 }
+input.error, textarea.error, select.error {
+    border: 2px solid red;
+}
