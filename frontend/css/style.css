@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header, footer{
+    background: #003366;
+    color: white;
+    padding: 10px 20px;
+
+}
+.container {
+    display: flex;
+    min-height: 80vh;
+}
+.sidebar {
+    width: 200px;
+    background: #f0f0f0;
+    padding: 15px;
+}
+.content{
+    flex: 1;
+    padding: 20px;
+}
+.btn-primary{
+    background: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

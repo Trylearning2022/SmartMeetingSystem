@@ -1,0 +1,90 @@
+<section class="meeting">
+  <h2>📅 Cuộc họp: Triển khai chuyển đổi số</h2>
+  <div class="meeting-info">
+    <p><strong>Thời gian:</strong> 14:00 - 15:30, ngày 25/04/2026</p>
+    <p><strong>Địa điểm:</strong> Phòng họp A, Tòa nhà chính</p>
+    <p><strong>Người chủ trì:</strong> Nguyễn Văn An</p>
+  </div>
+  <hr />
+  <h3>📋 Nội dung cuộc họp</h3>
+  <ul>
+    <li>Giới thiệu tổng quan về chuyển đổi số</li>
+    <li>Phân tích các bước triển khai trong doanh nghiệp</li>
+    <li>Thảo luận về các thách thức và giải pháp</li>
+    <li>Lên kế hoạch hành động tiếp theo</li>
+  </ul>
+  <button class="btn-primary">📝 Ghi biên bản</button>
+</section>
+<section class="new-meeting">
+  <h2>➕ Tạo cuộc họp mới</h2>
+  <form id="create-meeting-form">
+    <!--Thông tin cơ bản-->
+    <fieldset>
+      <legend>Thông tin cuộc họp</legend>
+
+      <label>
+        Tên cuộc họp <span style="color: red">*</span>
+        <input type="text" name="title" required />
+      </label>
+
+      <label>
+        Loại cuộc họp
+        <select name="meetingType">
+          <option value="thuong_ky">Thường kỳ</option>
+          <option value="dot_xuat">Đột xuất</option>
+          <option value="hoi_thao">Hội thảo</option>
+          <option value="truc_tuyen">Trực tuyến</option>
+        </select>
+      </label>
+
+      <label>
+        Thời gian bắt đầu <span style="color: red">*</span>
+        <input type="datetime-local" name="startTime" required />
+      </label>
+      <label>
+        Thời gian kết thúc
+        <input type="datetime-local" name="endTime" />
+      </label>
+      <label>
+        Địa điểm / Phòng họp
+        <input type="text" name="location" required />
+      </label>
+    </fieldset>
+    <!--Thành phần -->
+    <fieldset>
+      <legend>Thành phần tham dự</legend>
+
+      <label>
+        Người chủ trì <span style="color: red">*</span>
+        <input type="text" name="host" required />
+      </label>
+
+      <label>
+        Thành phần tham dự <span style="color: red">*</span>
+        <textarea
+          name="participants"
+          rows="4"
+          placeholder="Họ tên - Chức vụ - Đơn vị"
+        ></textarea>
+      </label>
+    </fieldset>
+    <!--Mô tả cuộc họp-->
+    <fieldset>
+      <legend>Mô tả cuộc họp</legend>
+      <label>
+        Mục đích / Nội dung chính
+        <textarea
+          name="description"
+          rows="4"
+          placeholder="Mô tả chi tiết nội dung cuộc họp"
+        ></textarea>
+      </label>
+
+      <label>
+        <input type="checkbox" name="requireSignature" />
+        Yêu cầu ký tên biên bản sau cuộc họp
+      </label>
+    </fieldset>
+    <button type="submit" class="btn-primary">➕ Tạo cuộc họp</button>
+  </form>
+</section>
