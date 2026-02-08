@@ -6,6 +6,21 @@ fetch("meeting.html")
   .catch((error) => {
     console.error("Không tải được nội dung:", error);
   });
+
+document.addEventListener("change", function (e) {
+  if (e.target.id !== "meetingType") return;
+
+  console.log("Change fired", e.target.value);
+  const locationField = document.getElementById("location");
+  if (!locationField) return;
+
+  if (e.target.value === "truc_tuyen") {
+    locationField.value = "";
+    locationField.disabled = true;
+  } else {
+    locationField.disabled = false;
+  }
+});
 document.addEventListener("submit", function (e) {
   if (e.target.id !== "create-meeting-form") return;
 
@@ -16,6 +31,8 @@ document.addEventListener("submit", function (e) {
 
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
+  const now = new Date();
+  //alert(JSON.stringify(now));
   //Checkbox cần xử lý riêng
   data.requireSignature = formData.has("requireSignature");
 
@@ -42,6 +59,10 @@ document.addEventListener("submit", function (e) {
   }
   if (!data.host || data.host.trim() === "") {
     msg.textContent = "❌ Vui lòng nhập tên người chủ trì cuộc họp.";
+    return;
+  }
+  if (new Date(data.startTime) < now) {
+    msg.textContent = "❌ Thời gian bắt đầu không thể là trong quá khứ.";
     return;
   }
 
