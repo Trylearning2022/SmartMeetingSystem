@@ -119,8 +119,7 @@ function renderMeetingList() {
     `;
     // Click = cập nhật State
     tr.onclick = () => {
-      appState.selectedMeeting = meeting;
-      renderApp();
+      setSelectedMeeting(meeting);
     };
 
     tbody.appendChild(tr);
@@ -157,7 +156,16 @@ function formatTime(timeStr) {
   const date = new Date(timeStr);
   return date.toLocaleString("vi-VN");
 }
-
+//Setselectmeeting
+function setSelectedMeeting(meeting){
+// Nếu click lại cuộc họp đang chọn, toggle off
+  if (appState.selectedMeeting && appState.selectedMeeting.id === meeting.id){
+    appState.selectedMeeting = null;
+  } else {
+    appState.selectedMeeting = meeting;
+  }
+  renderApp();
+}
 //Create meeting
 function handleCreateMeeting(data) {
   appState.isLoading = true;
@@ -203,6 +211,7 @@ document.addEventListener("change", function (e) {
   if (e.target.id === "filterSelect") {
     console.log("Change fired", e.target.value);
     appState.filter = e.target.value;
+    appState.selectedMeeting = null;
     renderApp();
   } else if (e.target.id === "meetingType") {
     console.log("Change fired", e.target.value);
