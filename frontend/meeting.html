@@ -1,4 +1,4 @@
-<section class="meeting">
+<!--<section class="meeting">
   <h2>📅 Cuộc họp: Triển khai chuyển đổi số</h2>
   <div class="meeting-info">
     <p><strong>Thời gian:</strong> 14:00 - 15:30, ngày 25/04/2026</p>
@@ -14,7 +14,7 @@
     <li>Lên kế hoạch hành động tiếp theo</li>
   </ul>
   <button class="btn-primary">📝 Ghi biên bản</button>
-</section>
+</section>  -->
 <section class="new-meeting">
   <h2>➕ Tạo cuộc họp mới</h2>
   <form id="create-meeting-form">
@@ -86,8 +86,39 @@
       </label>
     </fieldset>
     <button type="submit" class="btn-primary" id="btnCreate">
-        ➕ Tạo cuộc họp
+      ➕ Tạo cuộc họp
     </button>
-    <p id="formMessage" style="color: red; margin-top: 10px;"></p>
+    <p id="formMessage" style="color: red; margin-top: 10px"></p>
   </form>
+  <hr />
+  <label>
+    Lọc cuộc họp:
+    <select id="filterSelect" name="filterSelect">
+      <option value="all">Tất cả</option>
+      <option value="upcoming">Sắp diễn ra</option>
+      <option value="finished">Đã kết thúc</option>
+    </select>
+  </label>
+  <h3>📋 Danh sách cuộc họp</h3>
+  <table border="1" width="100%" id="meetingTable">
+    <thead>
+      <tr>
+        <th>Tiêu đề</th>
+        <th>Loại</th>
+        <th>Thời gian</th>
+        <th>Địa điểm</th>
+        <th>Người chủ trì</th>
+        <th>Nội dung</th>
+        <th>Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody id="meetingList">
+      <!--Dữ liệu cuộc họp sẽ được chèn ở đây-->
+      <tr>
+        <td colspan="7" style="text-align: center">Chưa có cuộc họp nào</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="meetingDetail"></div>
 </section>

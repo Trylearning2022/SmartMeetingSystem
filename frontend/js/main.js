@@ -4,7 +4,8 @@ fetch("meeting.html")
     document.getElementById("content").innerHTML = html;
     //load meeting.js
     const script = document.createElement("script");
-    script.src = "js/meeting.js";
+    script.type = "module";
+    script.src = "./js/meeting.js";
     document.body.appendChild(script);
   })
   .catch((error) => {

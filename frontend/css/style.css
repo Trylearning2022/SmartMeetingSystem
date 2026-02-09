@@ -32,3 +32,6 @@ body{
 input.error, textarea.error, select.error {
     border: 2px solid red;
 }
+tr.select {
+     background-color: #e6f2ff;
+}
